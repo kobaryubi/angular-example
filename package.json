@@ -2,11 +2,15 @@
   "name": "angular-example",
   "version": "0.0.0",
   "scripts": {
+    "format": "prettier --write \"**/*.ts\"",
+    "ng": "ng",
     "start": "ng serve --host 0.0.0.0"
   },
   "private": true,
   "dependencies": {
-    "@angular/core": "^17.0.0"
+    "@angular/core": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-server": "^17.0.0"
   },
   "devDependencies": {
     "@angular/cli": "^17.0.8",
