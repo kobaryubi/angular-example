@@ -1,0 +1,16 @@
+{
+  "name": "angular-example",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "ng serve --host 0.0.0.0"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/core": "^17.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^17.0.8",
+    "prettier": "3.1.1",
+    "typescript": "~5.2.2"
+  }
+}
