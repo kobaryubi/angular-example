@@ -2,3 +2,7 @@ services:
   app:
     build: .
     tty: true
+    ports:
+      - 4200:4200
+    volumes:
+      - .:/usr/src/app
