@@ -8,5 +8,4 @@ import { HomeComponent } from "./home/home.component";
   template: "<app-home></app-home>",
 })
 export class AppComponent {
-  title = "homes";
 }
