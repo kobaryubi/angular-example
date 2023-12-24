@@ -14,7 +14,7 @@ import { HousingLocation } from "../housinglocation";
       </form>
     </section>
     <section>
-      <app-housing-location></app-housing-location>
+      <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
     </section>
   `,
 })
