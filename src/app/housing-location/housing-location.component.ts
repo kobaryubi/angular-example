@@ -4,7 +4,16 @@ import { HousingLocation } from "../housinglocation";
 @Component({
   selector: "app-housing-location",
   standalone: true,
-  templateUrl: "./housing-location.component.html",
+  template: `
+    <section>
+      <img
+        [src]="housingLocation.photo"
+        alt="Exterior photo of {{ housingLocation.name }}"
+      />
+      <h2>{{ housingLocation.name }}</h2>
+      <p>{{ housingLocation.city }}, {{ housingLocation.state }}</p>
+    </section>
+  `,
 })
 export class HousingLocationComponent {
   @Input()
