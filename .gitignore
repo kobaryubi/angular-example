@@ -1,2 +1,6 @@
 /node_modules
 /.angular/cache
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
