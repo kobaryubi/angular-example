@@ -4,6 +4,11 @@
   "projects": {
     "angular-example": {
       "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app"
