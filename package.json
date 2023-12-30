@@ -4,7 +4,8 @@
   "scripts": {
     "format": "prettier --write \"**/*.{ts,json}\"",
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0 --poll 1000"
+    "start": "ng serve --host 0.0.0.0 --poll 1000",
+    "json-server": "json-server --watch db.json --host 0.0.0.0"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/cli": "^17.0.8",
     "@types/express": "^4.17.17",
     "@types/node": "^18.18.0",
+    "json-server": "^0.17.4",
     "prettier": "3.1.1",
     "typescript": "~5.2.2"
   }
