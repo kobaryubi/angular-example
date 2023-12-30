@@ -1,0 +1,22 @@
+<p [class.sale]="onSale">Binding to a single CSS class</p>
+
+<div>
+  <p>Binding to multiple CSS classes</p>
+  <p [class]="hasClass ? 'one two three' : ''">
+    A space-delimited string of class names.
+  </p>
+  <p
+    [class]="{
+      one: hasClass,
+      two: hasClass,
+      three: hasClass
+    }"
+  >
+    An object with class names as the keys and truthy or falsy expressions as
+    the values.
+  </p>
+  <p [class]="hasClass ? ['one', 'two', 'three'] : []">
+    An array of class names.
+  </p>
+  <button type="button" (click)="onClickToggle()">Toggle</button>
+</div>
