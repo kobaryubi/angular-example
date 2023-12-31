@@ -3,6 +3,7 @@ import { HomeComponent } from "./home/home.component";
 import { DetailsComponent } from "./details/details.component";
 import { BindingComponent } from "./binding/binding.component";
 import { ComponentsComponent } from "./components/components.component";
+import { ReferenceComponent } from "./reference/reference.component";
 
 export const routes: Routes = [
   {
@@ -24,5 +25,10 @@ export const routes: Routes = [
     path: "binding",
     component: BindingComponent,
     title: "Binding",
+  },
+  {
+    path: "reference",
+    component: ReferenceComponent,
+    title: "Reference",
   },
 ];
