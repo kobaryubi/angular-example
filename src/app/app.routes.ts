@@ -4,12 +4,18 @@ import { DetailsComponent } from "./details/details.component";
 import { BindingComponent } from "./binding/binding.component";
 import { ComponentsComponent } from "./components/components.component";
 import { ReferenceComponent } from "./reference/reference.component";
+import { TutorialComponent } from "./tutorial/tutorial.component";
 
 export const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
     title: "Home page",
+  },
+  {
+    path: "turorial",
+    component: TutorialComponent,
+    title: "Tutorial",
   },
   {
     path: "details/:id",
