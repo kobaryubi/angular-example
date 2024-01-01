@@ -4,7 +4,9 @@ import { DetailsComponent } from "./details/details.component";
 import { BindingComponent } from "./binding/binding.component";
 import { ComponentsComponent } from "./components/components.component";
 import { ReferenceComponent } from "./reference/reference.component";
-import { TutorialComponent } from "./tutorial/tutorial.component";
+import { HeroesComponent } from "./heroes/heroes.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 
 export const routes: Routes = [
   {
@@ -13,9 +15,19 @@ export const routes: Routes = [
     title: "Home page",
   },
   {
-    path: "turorial",
-    component: TutorialComponent,
-    title: "Tutorial",
+    path: "dashboard",
+    component: DashboardComponent,
+    title: "Dashboard",
+  },
+  {
+    path: "heroes",
+    component: HeroesComponent,
+    title: "Heroes",
+  },
+  {
+    path: "heroes/:id",
+    component: HeroDetailComponent,
+    title: "Hero details",
   },
   {
     path: "details/:id",
