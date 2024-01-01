@@ -8,7 +8,6 @@ import { CommonModule } from "@angular/common";
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: "./hero-detail.component.html",
-  styleUrl: "./hero-detail.component.less",
 })
 export class HeroDetailComponent {
   @Input() hero?: Hero;
