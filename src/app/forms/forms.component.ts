@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   FormControl,
   FormGroup,
@@ -14,14 +14,22 @@ import {
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: "./forms.component.html",
 })
-export class FormsComponent {
-  heroForm = new FormGroup({
-    name: new FormControl("", [
-      Validators.required,
-      Validators.minLength(4),
-      this.#forbiddenNameValidator(/bob/i),
-    ]),
-  });
+export class FormsComponent implements OnInit {
+  heroForm!: FormGroup;
+
+  ngOnInit(): void {
+    this.heroForm = new FormGroup(
+      {
+        name: new FormControl("", [
+          Validators.required,
+          Validators.minLength(4),
+          this.#forbiddenNameValidator(/bob/i),
+        ]),
+        alterEgo: new FormControl(""),
+      },
+      { validators: this.#identityRevealedValidator }
+    );
+  }
 
   #forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
     return (control) => {
@@ -29,6 +37,15 @@ export class FormsComponent {
       return forbidden ? { forbiddenName: { value: control.value } } : null;
     };
   }
+
+  #identityRevealedValidator: ValidatorFn = (control) => {
+    const name = control.get("name");
+    const alterEgo = control.get("alterEgo");
+
+    return name && alterEgo && name.value === alterEgo.value
+      ? { identityRevealed: true }
+      : null;
+  };
 
   get name() {
     return this.heroForm.get("name")!;
