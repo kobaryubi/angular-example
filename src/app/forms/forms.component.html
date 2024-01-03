@@ -1,13 +1,27 @@
 <form [formGroup]="heroForm" #formDir="ngForm">
   <div [hidden]="formDir.submitted">
     <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" formControlName="name" required />
-      <div *ngIf="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.errors?.['required']">Name is required.</div>
-        <div *ngIf="name.errors?.['minlength']">
-          Name must be at least 4 characters long.
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" required />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+          <div *ngIf="name.errors?.['required']">Name is required.</div>
+          <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+          </div>
         </div>
+      </div>
+      <div>
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" id="alterEgo" formControlName="alterEgo" />
+      </div>
+      <div
+        *ngIf="
+          heroForm.errors?.['identityRevealed'] &&
+          (heroForm.touched || heroForm.dirty)
+        "
+      >
+        Name cannot match alter ego.
       </div>
     </div>
     <p>Complete the form to enable the Submit button.</p>
