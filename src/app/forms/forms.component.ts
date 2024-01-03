@@ -4,6 +4,7 @@ import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  ValidatorFn,
   Validators,
 } from "@angular/forms";
 
@@ -15,8 +16,19 @@ import {
 })
 export class FormsComponent {
   heroForm = new FormGroup({
-    name: new FormControl("", [Validators.required, Validators.minLength(4)]),
+    name: new FormControl("", [
+      Validators.required,
+      Validators.minLength(4),
+      this.#forbiddenNameValidator(/bob/i),
+    ]),
   });
+
+  #forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+    return (control) => {
+      const forbidden = nameRe.test(control.value);
+      return forbidden ? { forbiddenName: { value: control.value } } : null;
+    };
+  }
 
   get name() {
     return this.heroForm.get("name")!;
