@@ -7,6 +7,7 @@ import { ReferenceComponent } from "./reference/reference.component";
 import { HeroesComponent } from "./heroes/heroes.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import { FormsComponent } from "./forms/forms.component";
 
 export const routes: Routes = [
   {
@@ -28,6 +29,11 @@ export const routes: Routes = [
     path: "heroes/:id",
     component: HeroDetailComponent,
     title: "Hero details",
+  },
+  {
+    path: "forms",
+    component: FormsComponent,
+    title: "Hero form",
   },
   {
     path: "details/:id",
