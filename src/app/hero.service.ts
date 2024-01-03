@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Hero } from "./hero";
 import { HEROES } from "./mock-heroes";
-import { Observable, catchError, of, tap } from "rxjs";
+import { Observable, catchError, delay, of, tap } from "rxjs";
 import { MessageService } from "./message.service";
 import { HttpClient } from "@angular/common/http";
+
+const ALTER_EGOS = ["Eric"];
 
 @Injectable({
   providedIn: "root",
@@ -41,5 +43,11 @@ export class HeroService {
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
+  }
+
+  isAlterEgoTaken(alterEgo: string): Observable<boolean> {
+    const isTaken = ALTER_EGOS.includes(alterEgo);
+
+    return of(isTaken).pipe(delay(400));
   }
 }

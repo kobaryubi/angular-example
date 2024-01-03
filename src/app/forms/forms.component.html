@@ -14,6 +14,12 @@
       <div>
         <label for="alterEgo">Alter Ego</label>
         <input type="text" id="alterEgo" formControlName="alterEgo" />
+        <div *ngIf="alterEgo.pending">Validating...</div>
+        <div *ngIf="alterEgo.invalid">
+          <div *ngIf="alterEgo.errors?.['uniqueAlterEgo']">
+            Alter ego is already taken.
+          </div>
+        </div>
       </div>
       <div
         *ngIf="

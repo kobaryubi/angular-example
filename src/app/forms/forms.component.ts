@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from "@angular/forms";
+import { UniqueAlterEgoValidator } from "../unique-alter-ego.validator";
 
 @Component({
   selector: "app-forms",
@@ -25,7 +26,12 @@ export class FormsComponent implements OnInit {
           Validators.minLength(4),
           this.#forbiddenNameValidator(/bob/i),
         ]),
-        alterEgo: new FormControl(""),
+        alterEgo: new FormControl("", {
+          asyncValidators: [
+            this.alterEgoValidator.validate.bind(this.alterEgoValidator),
+          ],
+          updateOn: "blur",
+        }),
       },
       { validators: this.#identityRevealedValidator }
     );
@@ -50,4 +56,10 @@ export class FormsComponent implements OnInit {
   get name() {
     return this.heroForm.get("name")!;
   }
+
+  get alterEgo() {
+    return this.heroForm.get("alterEgo")!;
+  }
+
+  constructor(private alterEgoValidator: UniqueAlterEgoValidator) {}
 }
