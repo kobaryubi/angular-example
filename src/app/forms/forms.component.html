@@ -1,0 +1,21 @@
+<form [formGroup]="heroForm" #formDir="ngForm">
+  <div [hidden]="formDir.submitted">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" required />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors?.['required']">Name is required.</div>
+        <div *ngIf="name.errors?.['minlength']">
+          Name must be at least 4 characters long.
+        </div>
+      </div>
+    </div>
+    <p>Complete the form to enable the Submit button.</p>
+    <button type="submit" [disabled]="heroForm.invalid">Submit</button>
+    <button type="button" (click)="formDir.resetForm({})">Reset</button>
+  </div>
+</form>
+<div *ngIf="formDir.submitted">
+  <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+  <button type="button" (click)="formDir.resetForm({})">Add new hero</button>
+</div>
