@@ -33,7 +33,7 @@ export const routes: Routes = [
   {
     path: "forms",
     component: FormsComponent,
-    title: "Hero form",
+    title: "Forms",
   },
   {
     path: "details/:id",
