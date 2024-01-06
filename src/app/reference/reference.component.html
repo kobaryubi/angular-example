@@ -12,3 +12,20 @@
 <ng-template #svk let-person="localSk"
   ><span>Ahoj {{ person }}!</span></ng-template
 >
+
+<input #phone placeholder="phone number" />
+<button type="button" (click)="callPhone(phone.value)">Call</button>
+<button
+  type="button"
+  #btn
+  disabled
+  [innerHTML]="'disabled by attribute: ' + btn.disabled"
+></button>
+<form [formGroup]="form" #itemForm="ngForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name</label>
+  <input type="text" id="name" formControlName="name" />
+  <button type="submit">Submit</button>
+</form>
+<div [hidden]="form.valid">
+  <p>{{ submitMessage }}</p>
+</div>
