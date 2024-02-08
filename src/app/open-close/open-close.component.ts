@@ -10,9 +10,7 @@ import { Component } from "@angular/core";
 @Component({
   selector: "app-open-close",
   standalone: true,
-  imports: [],
   templateUrl: "./open-close.component.html",
-  styleUrl: "./open-close.component.less",
   animations: [
     trigger("openClose", [
       state(

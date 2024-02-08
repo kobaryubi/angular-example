@@ -6,6 +6,5 @@ import { OpenCloseComponent } from "../open-close/open-close.component";
   standalone: true,
   imports: [OpenCloseComponent],
   templateUrl: "./animation.component.html",
-  styleUrl: "./animation.component.less",
 })
 export class AnimationComponent {}
