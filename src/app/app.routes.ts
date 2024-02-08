@@ -8,6 +8,7 @@ import { HeroesComponent } from "./heroes/heroes.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 import { FormsComponent } from "./forms/forms.component";
+import { AnimationComponent } from "./animation/animation.component";
 
 export const routes: Routes = [
   {
@@ -55,4 +56,9 @@ export const routes: Routes = [
     component: ReferenceComponent,
     title: "Reference",
   },
+  {
+    path: "animations",
+    component: AnimationComponent,
+    title: "Animations",
+  }
 ];
