@@ -4,6 +4,7 @@ import { routes } from "./app.routes";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./in-memory-data.service";
+import { provideAnimations } from "@angular/platform-browser/animations";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,5 +13,6 @@ export const appConfig: ApplicationConfig = {
       HttpClientModule,
       HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
     ),
+    provideAnimations(),
   ],
 };
