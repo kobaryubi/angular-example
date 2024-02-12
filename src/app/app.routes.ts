@@ -9,6 +9,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 import { FormsComponent } from "./forms/forms.component";
 import { AnimationComponent } from "./animation/animation.component";
+import { ObservablesComponent } from "./observables/observables.component";
 
 export const routes: Routes = [
   {
@@ -60,5 +61,10 @@ export const routes: Routes = [
     path: "animations",
     component: AnimationComponent,
     title: "Animations",
-  }
+  },
+  {
+    path: "observables",
+    component: ObservablesComponent,
+    title: "Observables",
+  },
 ];
