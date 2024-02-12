@@ -10,8 +10,11 @@ import { of } from "rxjs";
 export class ObservablesComponent implements OnInit {
   ngOnInit() {
     const numbers$ = of(1, 2, 3);
-    numbers$.subscribe((value) => {
-      console.log("Observable emitted the next value: " + value);
+    numbers$.subscribe({
+      next: (value) =>
+        console.log("Observable emitted the next value: " + value),
+      complete: () =>
+        console.log("Observable emitted the complete notification"),
     });
   }
 }
