@@ -1,0 +1,6 @@
+<button type="button" (click)="showConfig()">show config</button>
+<div *ngIf="config">
+  <p>{{ config.heroesUrl }}</p>
+  <p>{{ config.textfile }}</p>
+  <p>{{ config.date | date }}</p>
+</div>
